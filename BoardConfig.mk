@@ -71,7 +71,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
 TARGET_KERNEL_CONFIG := lineageos_oneplus3_defconfig
 TARGET_USE_SDCLANG := true
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_CLANG_PATH := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang7/clang-4679922/bin
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
