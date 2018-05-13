@@ -69,9 +69,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x02000000
 BOARD_RAMDISK_OFFSET     := 0x02200000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
-TARGET_KERNEL_CONFIG := lineageos_oneplus3_defconfig
-TARGET_USE_SDCLANG := true
-TARGET_KERNEL_CLANG_PATH := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang7/clang-4679922/bin
+TARGET_KERNEL_CONFIG := oneplus3_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
