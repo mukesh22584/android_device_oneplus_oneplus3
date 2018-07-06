@@ -363,7 +363,7 @@
     <!-- If this is true, device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
-    <!-- Values for GPS configuration -->
+    <!-- Values for GPS configuration 
     <string-array translatable="false" name="config_gpsParameters">
         <item>SUPL_HOST=supl.google.com</item>
         <item>SUPL_PORT=7275</item>
@@ -379,7 +379,7 @@
         <item>ERR_ESTIMATE=0</item>
         <item>INTERMEDIATE_POS=0</item>
         <item>SUPL_ES=0</item>
-    </string-array>
+    </string-array> -->
 
     <!--If enabled, capacitive keys will only light up when pressed.
          Otherwise, the buttons will light up whenever the user interacts with the devic -->
