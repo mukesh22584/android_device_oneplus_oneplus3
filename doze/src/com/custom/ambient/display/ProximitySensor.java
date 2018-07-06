@@ -37,20 +37,18 @@ public class ProximitySensor implements SensorEventListener {
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
-    private ExecutorService mExecutorService;
 
     private boolean mSawNear = false;
     private long mInPocketTime = 0;
 
+    private final ExecutorService mExecutorService;
+
     public ProximitySensor(Context context) {
         mContext = context;
-        mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
+        mSensorManager = (SensorManager)
+                mContext.getSystemService(Context.SENSOR_SERVICE);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         mExecutorService = Executors.newSingleThreadExecutor();
-    }
-
-    private Future<?> submit(Runnable runnable) {
-        return mExecutorService.submit(runnable);
     }
 
     @Override
@@ -64,6 +62,10 @@ public class ProximitySensor implements SensorEventListener {
             mInPocketTime = event.timestamp;
         }
         mSawNear = isNear;
+    }
+
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
     }
 
     private boolean shouldPulse(long timestamp) {
